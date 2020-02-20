@@ -33,7 +33,7 @@ foreach($user in $quser){
     # SessionState
     $usersObj.SessionState = $quserData[4]
     # IdleTime
-    $quserData[5] = $quserData[5] -replace "\+",":" -replace "\.","0:0" -replace "Disc","0:0"
+    $quserData[5] = $quserData[5] -replace "\.","0:0" -replace "Disc","0:0" -replace "\+","."
     if($quserData[5] -like "*:*"){
         $usersObj.IdleTime = [timespan]"$($quserData[5])"
     }elseif($quserData[5] -eq "." -or $quserData[5] -eq "none"){
